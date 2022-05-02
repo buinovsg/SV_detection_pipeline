@@ -87,7 +87,7 @@ process runDysgu {
 
 process runManta {
 
-        module 'manta'
+        module 'manta/1.6.0'
         module 'bcftools'
         cpus params.threads
 
@@ -105,7 +105,10 @@ process runManta {
         cd MantaWorkflow
         python runWorkflow.py -m local -j !{params.threads}
 
-        bcftools view results/variants/diploidSV.vcf.gz > ../manta.vcf
+        /sw/bioinfo/manta/1.6.0/rackham/libexec/convertInversion.py \
+		/sw/bioinfo/samtools/1.14/rackham/bin/samtools \
+		/crex/proj/sllstore2017050/nobackup/greta/raw_data/Pvulgaris_442_v2.0.fa \
+		results/variants/diploidSV.vcf.gz > ../manta.vcf
         '''
 }
 
