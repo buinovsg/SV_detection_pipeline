@@ -1,2 +1,2 @@
 # SV_detection_pipeline
-Master thesis ”Identifying structural variants from plant short-read sequencing data” 
+Master thesis ”Identifying structural variants from short-read sequencing data” 
