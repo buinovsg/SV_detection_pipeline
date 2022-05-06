@@ -83,20 +83,5 @@ plot_overlap <- function(sv_size_range){
 
 plot_overlap('M')
 
-cnvnator_bed <- read.table(file = 'bed_outputs/deletions/cnvnator_del.bed', sep = '\t', header = FALSE)
-difference <- setdiff(cnvnator_bed$V4, common_originals$V16)
-delly_bed <- read.table(file = 'bed_outputs/deletions/delly_del.bed', sep = '\t', header = FALSE)
-difference <- setdiff(delly_bed$V4, common_originals$V16)
-
-
-delly_IDs<- df[grepl("delly", df$V16),][ , "V16"]
-
-49174-2379
-
-
-
-
-
-
 
 
