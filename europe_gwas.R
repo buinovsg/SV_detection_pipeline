@@ -6,6 +6,7 @@ library(GAPIT3)
 
 setwd("~/MA_Bioinformatics/Thesis_Project/05_GWAS")
 
+#Step 1: Set data directory and import files
 vcf <- read.vcfR( "manta_overlap.vcf", verbose = FALSE )
 
 ##numeric format
@@ -25,14 +26,6 @@ myGM <- as.data.frame(vcf@fix[,c('ID','CHROM','POS')])
 pheno <- read.table('days2FwH.txt',head=T)
 pheno <- pheno[ , -which(names(pheno) %in% c("Country","GenePool"))]
 pheno <- pheno[pheno$Accession %in% myGD$taxa,]
-
-#Tutorial 6: Numeric Genotype Format
-#----------------------------------------------------------------------------------------
-#Step 1: Set data directory and import files
-
-pheno <- read.table(args[1],head=T)
-myGD <- read.table("GAPITnumeric.txt", head = TRUE)
-myGM <- read.table("GAPIT_SNPinfo.txt" , head = TRUE)
 
 #Step 2: Run GAPIT
 myGAPIT <- GAPIT(
