@@ -17,7 +17,6 @@ class(myGD) <- "numeric"
 rownames(myGD) <- gsub("\\..*","",rownames(myGD))
 myGD <- cbind(rownames(myGD), data.frame(myGD, row.names=NULL))
 names(myGD)[1] <- "taxa"
-#write.matrix(myGD,'numeric_genotype.txt',sep = "\t")
 
 ##genetic map
 myGM <- as.data.frame(vcf@fix[,c('ID','CHROM','POS')])
@@ -25,15 +24,16 @@ myGM <- as.data.frame(vcf@fix[,c('ID','CHROM','POS')])
 ##phenotypic data
 pheno <- read.table('days2FwH.txt',head=T)
 pheno <- pheno[ , -which(names(pheno) %in% c("Country","GenePool"))]
-pheno <- pheno[pheno$Accession %in% myGD$taxa,]
+#pheno <- pheno[pheno$Accession %in% myGD$taxa,]
 
 #Step 2: Run GAPIT
 myGAPIT <- GAPIT(
   Y=pheno,
   GD=myGD,
   GM=myGM,
-  PCA.total=2,
+  PCA.total=4,
   SNP.MAF=0.05,
+  Multiple_analysis=TRUE,
   model=c("MLM","MLMM","SUPER","FarmCPU","Blink")
 )
 
