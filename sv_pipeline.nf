@@ -1,7 +1,7 @@
 #! /usr/bin/env nextflow
-params.reference = '/crex/proj/sllstore2017050/nobackup/greta/raw_data/Pvulgaris_442_v2.0.fa'
-params.bam_dir = '/crex/proj/sllstore2017050/nobackup/greta/benchmarking/05_pipeline/pipeline_test/bam_dir_test/'
-params.chr_list = '/crex/proj/sllstore2017050/nobackup/greta/benchmarking/05_pipeline/pipeline_test/chr_list.txt'
+params.reference = ''
+params.bam_dir = ''
+params.chr_list = ''
 params.threads = 8
 params.pyenv_v = ''
 params.overlap_size = 0.8
