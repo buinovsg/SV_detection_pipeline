@@ -6,7 +6,6 @@ Structural variation (SV) detection pipeline which uses DELLY, dysgu and Manta t
 * DELLY
 * dysgu
 * Manta
-* Samtools
 * BCFTools
 * BEDTools
 ## Inputs
