@@ -3,9 +3,9 @@ Structural variation (SV) detection pipeline which uses DELLY, dysgu and Manta t
 ## Dependencies
 * Nextflow
 * pyenv
-* DELLY
-* dysgu
-* Manta
+* DELLY 0.7.7
+* dysgu 1.3.6
+* Manta 1.6.0
 * BCFTools
 * BEDTools
 ## Inputs
@@ -19,7 +19,7 @@ Chr03
 Chr04
 Chr05
 ```
-## SV calling
+## Usage
 Copy the pipeline script into the directory where you want to execute it. Following command is used for execution; adjust for the Python version containing dysgu installation and number of nodes:
 
 ```
