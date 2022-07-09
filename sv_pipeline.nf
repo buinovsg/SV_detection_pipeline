@@ -107,7 +107,7 @@ process runManta {
 
         /sw/bioinfo/manta/1.6.0/rackham/libexec/convertInversion.py \
 		/sw/bioinfo/samtools/1.14/rackham/bin/samtools \
-		/crex/proj/sllstore2017050/nobackup/greta/raw_data/Pvulgaris_442_v2.0.fa \
+		!{params.reference} \
 		results/variants/diploidSV.vcf.gz > ../manta.vcf
         '''
 }
